@@ -70,9 +70,9 @@
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
+		\parbox[t]{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
+		\hspace{1.5em} \parbox[t]{0.8\textwidth}{#2} \par}    % Entry value	
 		
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
@@ -117,30 +117,17 @@
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 
-\EducationEntry{PhD}{2019-current}{KU Leuven}{With professor Wojciech De Roeck as my promotor. Up until now I have two publications. \cite{bachmann2022classification} and \cite{jappens2023spt} are under review in communications in mathematical physics a third publication is under way.}
+\EducationEntry{PhD}{2019-current}{KU Leuven}{At the institute for theoretical physics. On topological phases of quantum matter. I have two manuscripts (\cite{bachmann2022classification} and \cite{jappens2023spt}) under review in communications in mathematical physics. A third manuscript is under way.}
 
-\EducationEntry{Master of Physics}{2016-2019}{KU Leuven}{Option research with some courses from pure mathematics.\\I had a thesis with profesor Wojciech De Roeck as my promotor, it was about topological frequency conversion in strongly driven quantum systems.\\Graduated with distinction.}
+\EducationEntry{Master of Physics}{2016-2019}{KU Leuven}{Option research with some courses from pure mathematics.\\I had a thesis at the institute for theoretical physics. The topic was ``topological frequency conversion in strongly driven quantum systems''.\\Graduated with distinction.}
 \sepspace
 
 \EducationEntry{Bachelor of Physics}{2014-2017}{KU Leuven}{Minor mathematics.}
 
-\begin{comment}
-%%% Work experience
-%%% ------------------------------------------------------------
-\NewPart{Work experience}{}
-
-\EducationEntry{Job name}{2011-present}{Company Name inc., Full-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
-\sepspace
-
-\EducationEntry{Job name}{2010-2011}{Company Name inc., Part-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
-\end{comment}
-
-%%% Skills
-%%% ------------------------------------------------------------
 \NewPart{Skills}{}
 
 \SkillsEntry{Languages}{Dutch (native language)}
-\SkillsEntry{}{English (fluently)}
+\SkillsEntry{}{English (fluent)}
 \SkillsEntry{}{French (limited)}
 
 \SkillsEntry{Software}{\textsc{Python} (\textsc{Numpy}, \textsc{Scipy}, \textsc{Sympy}, \textsc{QuTip} and many others), \textsc{Git}, \textsc{Java}, \textsc{Android studio}, \textsc{Matlab}, \LaTeX}
@@ -151,13 +138,7 @@
 
 \SkillsEntry{Youth work}{Day care during the summer holidays (5 years)}
 \SkillsEntry{}{Scout leader (2 years)}
-\SkillsEntry{Presidium}{I was in the presidium of a student union (wina) for two years, one of which I was a representative for the internationals of Scientica (the umbrella of the science unions of KuLeuven).}
-\begin{comment}
-%%% References
-%%% ------------------------------------------------------------
-\NewPart{References}{}
-Available upon request
-\end{comment}
+\SkillsEntry{Presidium}{I was in the presidium of a student union (Wina) for two years, one of which I was a representative for the internationals of Scientica (the umbrella of the science unions of KuLeuven).}
 
 \clearpage
 \bibliography{Bibliography}
