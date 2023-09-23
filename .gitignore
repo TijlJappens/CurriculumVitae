@@ -1,4 +1,5 @@
 *.pdf
+!Assessment_IIoT_JoiningProcesses.pdf
 *.aux
 *.log
 *.bbl
