@@ -1,0 +1,140 @@
+\documentclass{beamer}
+\input{myBeamerPackage.tex}
+
+\usepackage[style=verbose,backend=bibtex]{biblatex}
+\addbibresource{flandersMakeApplicatie.bib}
+
+\title[Flanders make presentation]%\hspace{1cm} \insertframenumber/\inserttotalframenumber]
+{Flanders make job interview:\\IIoT enabled manufacturing of multi material machine canopies}
+
+\author[Tijl]
+{Tijl Jappens \\
+	\scriptsize KU Leuven}
+
+
+\institute[]{
+	instituut voor theoretische fysica KU Leuven
+}
+
+
+\date{\today}
+
+\setbeamertemplate{itemize items}{\color{black}$\triangleright$}
+\setbeamertemplate{enumerate items}{\color{black}\insertenumlabel.}
+
+\usepackage[T1]{fontenc}
+\DeclareRobustCommand{\augiefamily}{%
+	\fontfamily{augie}\fontseries{m}\fontshape{n}\selectfont}
+\DeclareTextFontCommand{\textaugie}{\augiefamily}
+
+\begin{document}
+	
+	%%%%%%%%%% Removes the frame number from the title page %%%%%%%%%%
+	\bgroup
+	\makeatletter
+	\setbeamertemplate{footline}
+	{
+		\leavevmode%
+		\hbox{%
+			\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+				%   \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+				%    \usebeamerfont{title in head/foot}\insertshorttitle
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+				%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+				%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+		\end{beamercolorbox}}%
+		\vskip0pt%
+	}
+	\makeatother
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\egroup
+	
+	\begin{frame}{Machine canopies}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figures/examples of canopies.pdf}
+	\end{frame}
+
+	\begin{frame}{Understanding the current situation}
+		\begin{enumerate}
+			\item Adapting production line?
+			\item Modifiable parameters?
+			\pause
+			\item Measuring quality?
+			\item Regulations that have to be satisfied?
+			\pause
+			\item Process if machine has downtime?
+			\pause
+			\item Manuals, guidelines, procedures or historical records?
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{The manufacturer's goals}
+		\begin{enumerate}
+			\item Making system future proof.
+			\item Follow production orders.
+			\item Trace production (log data of steps).
+			\item Monitor performance and display in some dashboard.
+			\item Use data to optimize production.			
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Production process}
+		\begin{enumerate}
+			\item Thermoforming.
+			\item Deburring.
+			\item Surface preparation.
+			\item Mixing adhesive.
+			\item Application of the adhesive.
+			\item Curing joint.
+			\item Assembly of optional features.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages\footcite{Banus2021}}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figures/QualityControlInThermoformingSetup.pdf}
+	\end{frame}
+
+	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages}
+		\begin{itemize}
+			\item Used transfer learning.
+			\item Started from various Convolutional Neural Networks.
+			\item Detects and categorizes defects.
+		\end{itemize}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figures/DefectsOfPlastic.pdf}
+	\end{frame}
+	
+	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages}
+		Is this useful for the problem at hand?
+		\pause
+		\begin{itemize}
+			\item There were large amounts of widely available data. De we get access to such things?
+			\pause
+			\item If the parameters are changed do we have to retrain the system?
+			\pause
+			\item Does this method work for every type of plastic?
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Optimization of parameters in thermoforming}
+		The main parameters are:
+		\begin{enumerate}
+			\item Raw material quality.
+			\item Sheet temperature (distribution) during the process.
+			\item Vacuum pressure (for female molds) and the force for male molds.
+			\item Oven temperature.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\printbibliography
+	\end{frame} 
+\end{document}
+
+
