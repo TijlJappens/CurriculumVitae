@@ -95,12 +95,12 @@
 		\end{enumerate}
 	\end{frame}
 	
-	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages\footcite{Banus2021}}
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages\footcite{Banus2021}}
 		\centering
 		\includegraphics[width=0.8\textwidth]{Figures/QualityControlInThermoformingSetup.pdf}
 	\end{frame}
 
-	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages}
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages}
 		\begin{itemize}
 			\item Used transfer learning.
 			\item Started from various Convolutional Neural Networks.
@@ -110,7 +110,7 @@
 		\includegraphics[width=0.8\textwidth]{Figures/DefectsOfPlastic.pdf}
 	\end{frame}
 	
-	\begin{frame}{My research:\\Deep learning for the quality control of thermoforming food packages}
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages}
 		Is this useful for the problem at hand?
 		\pause
 		\begin{itemize}
@@ -119,17 +119,72 @@
 			\item If the parameters are changed do we have to retrain the system?
 			\pause
 			\item Does this method work for every type of plastic?
+			\pause
+			\item Aren't there just far simpler image recognition techniques that do this job? Probably, I don't know.
 		\end{itemize}
 	\end{frame}
 
-	\begin{frame}{Optimization of parameters in thermoforming}
-		The main parameters are:
-		\begin{enumerate}
-			\item Raw material quality.
-			\item Sheet temperature (distribution) during the process.
-			\item Vacuum pressure (for female molds) and the force for male molds.
-			\item Oven temperature.
-		\end{enumerate}
+	\begin{frame}{Literature study:\\Derivation of processing parameters of polypropylene foam thermoforming by an artificial neural network\footcite{https://doi.org/10.1002/pen.20287}}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figures/FoamCupThemoformingProcess.pdf}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{center}
+					\includegraphics[width=\textwidth]{Figures/CupProcessNoExplenation.pdf}
+				\end{center}
+			\end{column}
+			\begin{column}{0.5\textwidth}  %%<--- here
+				Parameters of process:
+				\begin{enumerate}
+					\item Heater temperature.
+					\item Plug displacement.
+					\item Vacuum time.
+					\item Vacuum pressure.
+					\item Plug velocity.
+					\item Plug material type (heat transfer coefficient).
+				\end{enumerate}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{center}
+					\includegraphics[width=0.9\textwidth]{Figures/CupDimensions.pdf}
+				\end{center}
+			\end{column}
+			\begin{column}{0.5\textwidth}  %%<--- here
+				Thickness of cup at 6 sites.
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\Deep learning for the quality control of thermoforming food packages}
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{Figures/NeuralNet.pdf}
+		\end{center}
+		\begin{itemize}
+			\item \textbf{Input:} Thicknesses.
+			\item \textbf{Output:} Parameters.
+			\item \textbf{Training data:} Actual data from cups.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Can this be used here?}
+		\begin{itemize}
+			\pause
+			\item Our case seems far more complicated.
+			\pause
+			\item Other parameters in the optimization process like price, electricity consumption and time.
+			\pause
+			\item Paper is from 2005. What is the state of the art with these things?
+			\pause
+			\item I tried to read more modern papers but they contained complicated material sciences.
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
