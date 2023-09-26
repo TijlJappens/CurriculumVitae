@@ -1,4 +1,8 @@
 *.pdf
+<<<<<<< HEAD
+=======
+!Flanders make application/Assignment/presentation/Figures/*
+>>>>>>> 072648128f64a67b037b9cbc90583454189ea69c
 !Assessment_IIoT_JoiningProcesses.pdf
 *.aux
 *.log
