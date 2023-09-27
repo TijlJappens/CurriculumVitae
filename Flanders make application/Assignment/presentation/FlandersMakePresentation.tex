@@ -69,7 +69,7 @@
 			\pause
 			\item Process if machine has downtime?
 			\pause
-			\item Manuals, guidelines, procedures or historical records?
+			\item Manuals, guidelines, procedures, or historical records?
 		\end{enumerate}
 	\end{frame}
 
@@ -114,7 +114,7 @@
 		Is this useful for the problem at hand?
 		\pause
 		\begin{itemize}
-			\item There were large amounts of widely available data. De we get access to such things?
+			\item There were large amounts of widely available data. Do we get access to such things?
 			\pause
 			\item If the parameters are changed do we have to retrain the system?
 			\pause
@@ -176,13 +176,13 @@
 
 	\begin{frame}{Can this be used here?}
 		\begin{itemize}
-			\item Multiple inputs can lead to the same output. How to avoid this? (probably related to over fitting?)
+			\item Multiple inputs can lead to the same output. How to avoid this? (probably related to overfitting?)
 			\pause
 			\item Our case seems far more complicated.
 			\pause
 			\item This isn't an optimization method yet.
 			\pause
-			\item Other parameters in the optimization process like price, electricity consumption and time.
+			\item Other parameters in the optimization process like price, electricity consumption, and time.
 			\pause
 			\item Paper is from 2005. What is the state of the art with these things?
 			\pause
@@ -199,7 +199,7 @@
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{Figures/SimulationMesh.pdf}
 		\end{center}
-		Numerical modelling using Newton:
+		Numerical modeling using Newton:
 		\[\rho\frac{\partial^2\vec{u}}{\partial t^2}=\vec{\nabla}\cdot \boldsymbol{\sigma}+\rho \vec{g}.\]
 	where
 	\begin{align*}
@@ -208,7 +208,7 @@
 	\end{frame}
 
 	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
-		Final result depends on initial density distribution of plastic:
+		The final result depends on the initial density distribution of plastic:
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{Figures/DensityDistribution.pdf}
 		\end{center}
@@ -220,7 +220,7 @@
 				\includegraphics[width=\textwidth]{Figures/CupDimensionsMultiobjective.pdf}
 			\end{column}
 			\begin{column}{0.5\textwidth}
-				Defining objectives as function of final density distribution:
+				Defining objectives as a function of final density distribution:
 				\begin{itemize}
 					\item Minimize $f_1(\vec v)$, the total volume of plastic used.
 					\item Minimize $f_2(\vec v)$, the minimum thickness.
@@ -236,14 +236,28 @@
 		\begin{itemize}
 			\item Renormalize objectives: $\tilde f_i(\vec v)=f_i(\vec v)/N_i$.
 			\item Take the RMS: $f_{\text{RMS}}=\sqrt{\sum_{i}\abs{\tilde{f}_i(\vec{v})}^2}$.
-			\item Minimize this number using gradient decent.
+			\item Minimize this number using gradient descent.
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
-		Other way: Multi-Objective Optimization.
+		Another way: Multi-Objective Optimization.
 		\begin{itemize}
-			\item 
+			\pause
+			\item $\vec x$ is Pareto dominant over $\vec y$ ($\vec x\prec \vec y$) iff. $f_i(\vec x)\leq f_i(\vec y)$ for all $i$ and $f_i(\vec x)< f_i(\vec y)$ for some $i$.
+			\pause
+			\item $\vec {x^*}$ is Pareto optimal if there is no $\vec y$ such that $\vec y\prec \vec{x^*}$.
+			\pause
+			\item The Goal is to find the Pareto optimal set.
+			\pause
+			\item Algorithms to find this set include scalarization methods or evolutionary algorithms.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		\begin{itemize}
+			\item They used an evolutionary algorithm named SMS-EMOA.
+			\item They obtained 7 Pareto optimal solutions.
 		\end{itemize}
 	\end{frame}
 
