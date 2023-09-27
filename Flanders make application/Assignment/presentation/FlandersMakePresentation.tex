@@ -176,20 +176,80 @@
 
 	\begin{frame}{Can this be used here?}
 		\begin{itemize}
+			\item Multiple inputs can lead to the same output. How to avoid this? (probably related to over fitting?)
 			\pause
 			\item Our case seems far more complicated.
+			\pause
+			\item This isn't an optimization method yet.
 			\pause
 			\item Other parameters in the optimization process like price, electricity consumption and time.
 			\pause
 			\item Paper is from 2005. What is the state of the art with these things?
 			\pause
-			\item I tried to read more modern papers but they contained complicated material sciences.
+			\item One can also do the opposite and predict the thicknesses based on the production parameters.
 		\end{itemize}
 	\end{frame}
-	
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming\footcite{math9151760}}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figures/ThermoformingThicknessDistribution.pdf}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{Figures/SimulationMesh.pdf}
+		\end{center}
+		Numerical modelling using Newton:
+		\[\rho\frac{\partial^2\vec{u}}{\partial t^2}=\vec{\nabla}\cdot \boldsymbol{\sigma}+\rho \vec{g}.\]
+	where
+	\begin{align*}
+		\vec{u}&=\text{displacement}&\boldsymbol{\sigma}&=\text{Cauchy stress tensor}&\vec{g}&=\text{gravitational acceleration}
+	\end{align*}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		Final result depends on initial density distribution of plastic:
+		\begin{center}
+			\includegraphics[width=0.4\textwidth]{Figures/DensityDistribution.pdf}
+		\end{center}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{Figures/CupDimensionsMultiobjective.pdf}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				Defining objectives as function of final density distribution:
+				\begin{itemize}
+					\item Minimize $f_1(\vec v)$, the total volume of plastic used.
+					\item Minimize $f_2(\vec v)$, the minimum thickness.
+					\item Minimize $f_3(\vec v)$, thickness heterogeneity.
+				\end{itemize}
+				Where $\vec{v}=F(\:\vec t\:)$, the initial thickness distribution.
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		The standard way to do optimization is:
+		\begin{itemize}
+			\item Renormalize objectives: $\tilde f_i(\vec v)=f_i(\vec v)/N_i$.
+			\item Take the RMS: $f_{\text{RMS}}=\sqrt{\sum_{i}\abs{\tilde{f}_i(\vec{v})}^2}$.
+			\item Minimize this number using gradient decent.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Literature study:\\ Multi-Objective Optimization of Plastics Thermoforming}
+		Other way: Multi-Objective Optimization.
+		\begin{itemize}
+			\item 
+		\end{itemize}
+	\end{frame}
+
 	\begin{frame}
 		\printbibliography
-	\end{frame} 
+	\end{frame}
 \end{document}
 
 
